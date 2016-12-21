@@ -15,6 +15,25 @@
 // write your code here ...
 
 
+var frineds=[]
+function makeFriend(name, age, education){
+	return frineds.push({
+		Name: name,
+		Age: age,
+		Education: education
+	});
+	}
+
+function showFriend(obj){
+	return  obj.Name + " with the age of " + obj.Age + " and with " + obj.Education;
+}
+
+function averageStudents(){
+	return frineds.reduce(function(acc, value){
+		return acc + value.Age;
+	}, 0)/ frineds.length;
+}
+
 
 
 /*
@@ -25,7 +44,24 @@
 	rangeSquared(2,10)// [4,16,12,16,100];
 */
 // write your code here ...
+function square(num){
+	return num * num;
+}
 
+function rangeSquared(num1, num2){
+	var result=[]
+	if(num2 === undefined ){
+		result.push(square(num1));
+		return (num1 % 2 === 0)? result: "enter even numbers";
+	} else{
+		while(num1 <= num2){
+			if(num1 %2 === 0)
+				result.push(square(num1));
+			num1++;
+		}
+	}
+	return result; 
+}
 
 
 
@@ -35,4 +71,13 @@
 */
 
 // write your code here ....
+
+function leader(array){
+	return	 array.filter(function(value, index){
+		return  array.slice(index+1).every(function(x){ return value > x});
+	})
+}
+
+
+
 

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <link rel="stylesheet" type="text/css" href="style.css">
+
         <title> To Do List</title>
     </head>
 <body>
@@ -15,4 +17,11 @@
         </ul>
     
     </div>
+
+     <script src="jquery.js"></script>
+     <script type="text/javascript">
+        $("#addBtn").click(function(){
+            $("ul").append("<li>" + $("#inputToDO").val() + "</li>");
+        })
+     </script>
 </body>

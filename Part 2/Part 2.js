@@ -32,3 +32,60 @@
  */
 
 //writ your code here .....
+
+//a.
+var arrayOfPlayers = []
+function player(name){
+	
+	this.na = name;
+	this.addInfo = addInfo;
+	this.increaseLevel= increaseLevel;
+	this.isAvailable = isAvailable;
+	return this;
+}
+
+//b.
+addInfo = function(age, position, level, availability){
+	this.age = age;
+	this.position =position;
+	this.level = level;
+	this.availability =availability;
+	arrayOfPlayers.push({ name : this.na, age : this.age, position : this.position, level: this.level, available: this.availability});
+
+};
+
+//c.
+increaseLevel = function(n){
+	this.level +=n; 
+}
+
+//d.
+isAvailable = function(){
+	return (this.availability === "available")? true: false;
+}
+
+//e.
+var player1= player("sam");
+player1.addInfo(33, "center", 4, "available");
+var player2= player("john");
+player2.addInfo(20, "align", 2, "not");
+var player3= player("saied");
+player3.addInfo(40, "center", 4, "available");
+var player4= player("Azoz");
+player4.addInfo(19, "left", 1, "not");
+
+//f.
+function decrease(){
+	 arrayOfPlayers.map(function(value, index){
+		if(value["age"] >30)
+			value["level"] -=1;
+	});
+	 return arrayOfPlayers;
+}
+
+//g.
+function sortPalyerBy(array, str){
+	return array.sort(function(x, y){
+		return x[str] > y[str];
+	})
+}

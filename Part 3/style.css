@@ -1,0 +1,12 @@
+body {
+	background-color: Aqua;
+};
+
+h1 {
+   font-family: 'Arial';
+}
+
+input {
+	width: 175px;
+	height: 50px;
+}
